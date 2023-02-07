@@ -1,7 +1,9 @@
+import type { NextApiResponse } from 'next'
 import connectDB from '../../../utils/database'
 import { UserModel } from '@/utils/schemaModels'
+import { ExtendedNextApiRequestUser, ResMessageType } from '@/utils/types'
 
-const createItem = async (req, res) => {
+const registerUser = async (req: ExtendedNextApiRequestUser, res: NextApiResponse<ResMessageType>) => {
   try {
     await connectDB()
     await UserModel.create(req.body)
@@ -12,4 +14,4 @@ const createItem = async (req, res) => {
   }
 }
 
-export default createItem
+export default registerUser
