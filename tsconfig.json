@@ -29,7 +29,7 @@
     "**/*.tsx",
     "pages/api/user/register.ts",
     "utils/auth.ts"
-  ],
+, "pages/api/user/auth.js", "pages/api/user/auth.js"  ],
   "exclude": [
     "node_modules"
   ]
