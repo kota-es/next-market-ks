@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const UpdateItem = (props) => {
 
@@ -22,8 +23,9 @@ const UpdateItem = (props) => {
   }
 
   return (
-    <div>
-      <h1>アイテム削除</h1>
+    <div className='delete-page'>
+      <Head><title>アイテム削除</title></Head>
+      <h1 className='page-title'>アイテム削除</h1>
       <form onSubmit={handleSubmit}>
         <h2>{props.singleItem.item}</h2>
         <Image src={props.singleItem.image} width="750" height="500" alt="item-image"/>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Head from 'next/head'
 
 const CreateItem = () => {
   const [title, setTitle] = useState("")
@@ -33,12 +34,13 @@ const CreateItem = () => {
 
   return (
     <div>
-      <h1>アイテム作成</h1>
+      <Head><title>アイテム作成</title></Head>
+      <h1 className='page-title'>アイテム作成</h1>
       <form onSubmit={handleSubmit}>
-        <input  value={title} onChange={e => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
-        <input  value={price} onChange={e => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
-        <input  value={image} onChange={e => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
-        <textarea  value={description} onChange={e => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明"></textarea>
+        <input value={title} onChange={e => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
+        <input value={price} onChange={e => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
+        <input value={image} onChange={e => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
+        <textarea value={description} onChange={e => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明"></textarea>
         <button>作成</button>
       </form>
     </div>

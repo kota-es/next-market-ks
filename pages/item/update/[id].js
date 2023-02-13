@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Head from 'next/head'
 
 const UpdateItem = (props) => {
   const [title, setTitle] = useState(props.singleItem.title)
@@ -33,7 +34,8 @@ const UpdateItem = (props) => {
 
   return (
     <div>
-      <h1>アイテム編集</h1>
+      <Head><title>アイテム編集</title></Head>
+      <h1 className='page-title'>アイテム編集</h1>
       <form onSubmit={handleSubmit}>
         <input value={title} onChange={e => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
         <input value={price} onChange={e => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
